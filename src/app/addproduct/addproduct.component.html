@@ -1,0 +1,93 @@
+<app-header-admin></app-header-admin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <!-- Form START -->
+            <form class="file-upload " [formGroup]="addproductform">
+                <div class="row mb-5 gx-5">
+                    <!-- Contact detail -->
+                    <div class="col-xxl-8 mb-5 mb-xxl-0">
+                        <div class="bg-secondary-soft px-4 py-5 rounded">
+                            <div class="row g-3">
+                                <h1 class="mb-4 mt-0">Add Product:</h1>
+                                <!-- First Name -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Id *</label>
+                                    <input type="number" class="form-control " placeholder="" aria-label="Id"
+                                        formControlName="newid">
+                                    <div *ngIf="addproductform.controls['newid'].errors?.['required'] && (!addproductform.controls['newid'].pristine ||validation)"
+                                        class="alert" style="color: red;" role="alert">
+                                        *Id is required
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">category *</label>
+                                    <input type="text" class="form-control " placeholder="" aria-label="Category"
+                                        formControlName="newcategory">
+                                    <div *ngIf="(!addproductform.controls['newcategory'].pristine || validation ) && addproductform.controls['newcategory'].errors?.['required']"
+                                        class="alert" style="color: red;" role="alert">
+                                        *Category is required
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">title *</label>
+                                    <input type="text" class="form-control" placeholder="" aria-label="Title"
+                                        formControlName="newtitle">
+                                    <div *ngIf="(!addproductform.controls['newtitle'].pristine || validation ) && addproductform.controls['newtitle'].errors?.['required']"
+                                        class="alert" style="color: red;" role="alert">
+                                        *Title is required
+                                    </div>
+                                </div>
+                                <!-- Last name -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Price *</label>
+                                    <input type="number" class="form-control" placeholder="" aria-label="Price"
+                                        formControlName="newprice">
+                                    <div *ngIf="(!addproductform.controls['newprice'].pristine || validation ) && addproductform.controls['newprice'].errors?.['required']"
+                                        class="alert" style="color: red;" role="alert">
+                                        *Price is required
+                                    </div>
+                                </div>
+                                <!-- Phone number -->
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Description *</label>
+                                    <input type="text" class="form-control" placeholder="description"
+                                        aria-label="Description" formControlName="newdescription">
+                                    <div *ngIf="(!addproductform.controls['newdescription'].pristine || validation ) && addproductform.controls['newdescription'].errors?.['required']"
+                                        class="alert" style="color: red;" role="alert">
+                                        *Description is required
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Image *</label>
+                                    <input type="text" class="form-control" placeholder="place your image"
+                                        aria-label="Image" formControlName="newimage">
+                                    <div *ngIf="(!addproductform.controls['newimage'].pristine || validation ) && addproductform.controls['newimage'].errors?.['required']"
+                                        class="alert" style="color: red;" role="alert">
+                                        *Image is required
+                                    </div>
+                                </div>
+
+
+                            </div> <!-- Row END -->
+                        </div>
+                    </div>
+
+                </div> <!-- Row END -->
+
+
+                <!-- button -->
+                <div class="gap-3 d-md-flex justify-content-md-end text-center">
+                    <a class="btn btn-lg" style="color: #0d6efd;" routerLink="/admin">Cancel</a>
+                    <button type="button" (click)="OnAdd()" class="boutton btn btn-primary btn-lg" type="submit">Add
+                        Product</button>
+                </div>
+            </form> <!-- Form END -->
+        </div>
+    </div>
+</div>

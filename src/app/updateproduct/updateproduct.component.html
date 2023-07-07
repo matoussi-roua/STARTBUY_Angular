@@ -1,0 +1,70 @@
+<app-header-admin></app-header-admin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <!-- Form START -->
+            <form class="file-upload" [formGroup]="updateproductform">
+                <div class="row mb-5 gx-5">
+                    <!-- Contact detail -->
+                    <div class="col-xxl-8 mb-5 mb-xxl-0">
+                        <div class="bg-secondary-soft px-4 py-5 rounded">
+                            <div class="row g-3">
+                                <h1 class="mb-4 mt-0">Update User</h1>
+                                <!-- First Name -->
+                                <div class="col-md-6">
+                                    <label class="form-label">id *</label>
+                                    <input type="number" class="form-control" placeholder="" aria-label="Phone number"
+                                         formControlName="newid">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Title *</label>
+                                    <input type="text" class="form-control" placeholder="" aria-label="First name"
+                                         formControlName="newtitle">
+                                </div>
+                                <!-- Last name -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Category *</label>
+                                    <input type="text" class="form-control" placeholder="" aria-label="Last name"
+                                         formControlName="newcategory">
+                                </div>
+                                <!-- Phone number -->
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Price *</label>
+                                    <input type="number" class="form-control" placeholder="" aria-label="Phone number"
+                                         formControlName="newprice" name="newprice">
+                                </div>
+                                <!-- Mobile number -->
+
+                                <!-- Email -->
+
+                                <!-- Skype -->
+                                <div class="col-md-12">
+                                    <label for="inputEmail4" class="form-label">Description *</label>
+                                    <input type="text" class="form-control" id="inputEmail4"
+                                         formControlName="newdescription">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputEmail4" class="form-label">Image *</label>
+                                    <input type="text" class="form-control" id="inputEmail4"
+                                         formControlName="newimage">
+                                </div>
+                            </div> <!-- Row END -->
+                        </div>
+                    </div>
+
+                </div> <!-- Row END -->
+
+
+                <!-- button -->
+                <div class="gap-3 d-md-flex justify-content-md-end text-center">
+                    <a class="btn btn-lg" style="color: #0d6efd;" href="../usersforadmin/">Cancel</a>
+                    <button type="button" (click)="OnUpdate()" class="boutton btn btn-primary btn-lg" type="submit">Update profile</button>
+                </div>
+            </form> <!-- Form END -->
+        </div>
+    </div>
+</div>

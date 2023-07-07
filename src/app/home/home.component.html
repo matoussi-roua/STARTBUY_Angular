@@ -1,0 +1,181 @@
+<app-header></app-header>
+<div class="component">
+
+  <div class="filtre ">
+    <button class="boutton-filtre" id="boutton-fil">
+      <i class=" fa-solid fa-bars" style="color: #000000;"></i>
+    </button>
+
+    <div class="element-filtre">
+
+      <ul class="filtre1">
+
+        <h6>Catégories:</h6>
+        <div class="form-check ">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+          <label class="form-check-label" for="flexRadioDefault4">
+            man
+          </label>
+        </div>
+        <div class="form-check ">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+            women
+          </label>
+        </div>
+        <div class="form-check ">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Child
+          </label>
+        </div>
+        <div class="form-check ">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" checked>
+          <label class="form-check-label" for="flexRadioDefault5">
+            Accessories
+          </label>
+        </div>
+        <div class="form-check ">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+          <label class="form-check-label" for="flexRadioDefault3">
+            ---
+          </label>
+        </div>
+      </ul>
+
+
+      <ul class="filtre1">
+        <div>
+          <h6>Price(TND):</h6>
+          <label for="inferieur">From</label>
+          <input type="number" id="inferieur" name="tentacles" min="0" max="10000">
+          <label for="superieur">to</label>
+          <input type="number" id="superieur" name="tentacles" min="0" max="10000">
+        </div>
+      </ul>
+
+      <ul class="filtre1">
+        <div class="dropdown" data-bs-theme="light">
+          <h6>Marque:</h6>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Dior
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Artzy
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Farmasi
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              ---
+            </label>
+          </div>
+
+
+        </div>
+      </ul>
+
+      <ul class="filtre1">
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-outline-primary" type="reset" value="Reset">
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="pub ">
+    <img class="img-fluid" src="../assets/images/pub.png" alt="">
+  </div>
+
+  <div class="divider_line"></div>
+
+
+  <div class="card-group container-fluid">
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="../assets/images/homme.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h6 class="card-title">MAN</h6>
+        <p class="card-text">We present our collection of stylish clothes, you can find what you need, we ensure to
+          provide our services to you.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Clothes</li>
+        <li class="list-group-item">Shoes</li>
+        <li class="list-group-item">other</li>
+      </ul>
+      <div class="card-body">
+        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/man">
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="../assets/images/femme.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h6 class="card-title">WOMEN</h6>
+        <p class="card-text">We offer a lot of clothes for women ,here you can find what you need ,we ensure to provide
+          our services to you.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Clothes</li>
+        <li class="list-group-item">Shoes</li>
+        <li class="list-group-item">other</li>
+      </ul>
+      <div class="card-body">
+        <input class="btn btn-primary" type="submit" value="VIEW " routerLink="/products/women">
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="../assets/images/fille.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h6 class="card-title">CHILD</h6>
+        <p class="card-text">You can find here what your child need don't hesitate to make him happy shope while you're
+          home.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Clothes</li>
+        <li class="list-group-item">Shoes</li>
+        <li class="list-group-item">other</li>
+      </ul>
+      <div class="card-body">
+        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/child">
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="../assets/images/accessoire1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h6 class="card-title">ACCESSORIES</h6>
+        <p class="card-text">We provide fabulous accessories for you, for your kitchen, for your living room and for
+          your devices ...</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Jewerly</li>
+        <li class="list-group-item">Decoration staff</li>
+        <li class="list-group-item">Other</li>
+      </ul>
+      <div class="card-body">
+        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/accessories">
+
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

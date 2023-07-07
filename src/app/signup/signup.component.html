@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+<section class="min-vh-100 signup" style="background-color:#314a8015 ;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div [formGroup]="signup" class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div  class="card-body p-5 text-center">
+              <h3 class="mb-5">Sign up</h3>
+                <div class="form mb-4">
+                    <input type="text" style="width: 150px; float: left;" id="name" placeholder="First Name" class="form-control form-control-lg" formControlName="fname" />
+                    <input type="text" style="width: 150px; float: right ; margin-bottom: 32px;" id="lastname" placeholder="Last Name" class="form-control form-control-lg"  formControlName="lname"/>
+                  
+
+                  </div>
+
+              <div class="form-outline mb-4">
+                <div *ngIf="(Validation||!signup.pristine) && (signup.controls['fname'].errors?.['required'] || signup.controls['lname'].errors?.['required'])" style="display: inline-block; width: 100%;" class="alert alert-danger" role="alert">Name is required</div>
+
+                <input type="email" id="typeEmailX-2" placeholder="Email" class="form-control form-control-lg" formControlName="email" />
+                <div *ngIf="(Validation||!signup.controls['email'].pristine||!signup.controls['agree'].pristine||!signup.controls['password'].pristine || !signup.controls['repeatpassword'].pristine) && signup.controls['email'].errors?.['required']" class="alert alert-danger" role="alert">email is required</div>
+
+              </div>
+  
+              <div class="form-outline mb-4">
+                <input type="password" id="typePasswordX-2" placeholder="Password" class="form-control form-control-lg" formControlName="password" />
+                <div *ngIf="(Validation||!signup.controls['agree'].pristine||!signup.controls['password'].pristine || !signup.controls['repeatpassword'].pristine) && signup.controls['password'].errors?.['required']" class="alert alert-danger" role="alert">passsword is required</div>
+
+              </div>
+              <div class="form-outline mb-4">
+                <input type="password" id="typePasswordX-2" placeholder="Repeat Password" class="form-control form-control-lg" formControlName="repeatpassword"/>
+                <div *ngIf="(Validation||!signup.controls['agree'].pristine||!signup.controls['repeatpassword'].pristine) && signup.controls['repeatpassword'].errors?.['required']" class="alert alert-danger" role="alert">repeating password is required</div>
+              </div>
+    
+              <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-start mb-4">
+                <input class="form-check-input" type="checkbox" value="" id="form1Example3" formControlName="agree" />
+                <label class="form-check-label" for="form1Example3" style="color:rgba(0, 0, 0, 0.654);">I have read and agree to the terms</label>
+
+              </div>
+              <div *ngIf="(Validation||!signup.controls['agree'].pristine) && signup.controls['agree'].errors?.['required']"  class="alert alert-danger" role="alert">You should agree to the terms</div>
+
+              <button (click)="OnSubmit()" style="width: 225px; color: #ffffffdf; background-color: #e39c40;" class="btn btn-primary  btn-block" type="submit">Sign Up</button>
+              <hr class="my-4">
+  
+              <button class="btn  btn-block btn-primary" style="background-color: #dd4b39; width: 225px; color: #ffffffdf; margin-bottom: 10px;"
+                type="submit"><i class="fab fa-google me-2"></i> Sign up with google</button>
+              <button class="btn  btn-block btn-primary mb-2" style="background-color: #3b5998; width: 225px;color: #ffffffdf;"
+                type="submit"><i class="fab fa-facebook-f me-2"></i>Sign up with facebook</button>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

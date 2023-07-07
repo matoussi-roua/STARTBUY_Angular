@@ -1,0 +1,83 @@
+
+/* component1 */
+.component{
+	background-color: #314a8015;
+	padding-bottom: 50px;
+}
+.filtre{
+    width: 17%;
+    font-size: 1vw;
+    border-radius: 20px;
+    text-align: center;
+    float: left;
+    border-color: rgb(0, 0, 0) ;
+
+}
+.boutton-filtre{
+    border: #00000036 1px solid;
+border-radius: 3px;
+margin: 10px;
+width: 20%;
+background-color: white;
+}
+.element-filtre{
+    text-align:left;
+    border: rgba(0, 0, 0, 0.45)  1px solid;
+    border-radius: 20px;
+	background-color: #ffffff;
+	display: block;
+   
+}
+#inferieur ,#superieur{
+    width: 25%;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.45);
+    overflow:hidden;
+}
+.filtre1{
+    padding-bottom: 10px ;
+    margin: 20px auto;
+    border-bottom: 1px rgba(0, 0, 0, 0.228) solid;
+}
+.filtre1:last-child{
+    border-bottom: none;
+}
+
+ .pub{
+	padding-top:50px ;
+ }
+ .divider_line{
+	border-bottom: 1px rgba(0, 0, 0, 0.228) solid;
+	width: 100%;
+	display: inline-block;
+  font-size: 22px;
+}
+
+@media(max-width: 991px) { 
+    navbar-toggler{
+        display: none;
+    }
+    .boutton-filtre{
+        display: none;
+    }
+	.filtre{
+		width: 100%;
+		font-size: large;
+		border-bottom: 2px #a52f32 solid;
+
+	}
+.element_filtre{
+	display: block;
+}
+
+ }
+
+ .card{
+	margin: auto;
+	display: block;
+} 
+
+p{
+    font-size: 0.9rem;
+}

@@ -1,0 +1,109 @@
+<app-header-admin></app-header-admin>
+<h1 class="container deco-pad" style="text-align: center;">ADMIN DASHBOARD FOR USERS </h1>
+<hr>
+<table class="container">
+    <thead>
+        <th class=" head">
+            id
+        </th>
+        <th class=" head">
+            role
+        </th>
+        <th class=" head">
+            First name
+        </th>
+        <th class="head">
+            Last name
+        </th>
+        <th class="head">
+            Location
+        </th>
+        <th class="head">
+            Phone number
+        </th>
+        <th class=" head">
+            Email
+        </th>
+        <th class="head">
+            password
+        </th>
+
+        <th colspan="1" class=" head">
+            action
+        </th>
+        <th colspan="1" class=" head">
+            <button class="btn add" (click)="OnAdd()">Add</button>
+        </th>
+        
+
+    </thead>
+    <tbody>
+        <tr class=" border deco-pad" *ngFor="let user of userlist ">
+            <td class="deco-pad">
+                {{user.id}}
+            </td>
+            <td class="deco-pad">
+                {{user.role}}
+            </td>
+            <td class="deco-pad">
+                {{user.first_name}}
+            </td>
+            <td class="deco-pad">
+                {{user.last_name}}
+            </td>
+            <td class="deco-pad">
+                {{user.location}}
+            </td>
+            <td class="deco-pad">
+                {{user.phone_number}}
+            </td>
+            <td class="deco-pad">
+                {{user.email}}
+            </td>
+            <td class="deco-pad">
+                {{user.password}}
+            </td>
+            <td class="deco-pad">
+                <button (click)="openModal(user.id)" type="button" class="btn delete" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+            </td>
+            <td class="deco-pad">
+                <button class="btn update" routerLink="/updateusers/{{user.id}}">Update</button>
+            </td>
+    
+        </tr>
+
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete User:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        Do you want to delete this user?
+        </div>
+        <div class="modal-footer">
+          <button type="button" #Closebutton class="btn btn-secondary delete" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="OnDelete(iddelete)" class="btn btn-primary add">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<nav aria-label="Page navigation example ">
+    <ul class="pagination justify-content-end deco-pad">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>

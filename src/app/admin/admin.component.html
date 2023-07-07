@@ -1,0 +1,107 @@
+<app-header-admin></app-header-admin>
+<h1 class="container deco-pad" style="text-align: center;">ADMIN DASHBOARD FOR PRODUCTS </h1>
+<hr>
+<table class="container">
+    <thead>
+        <th class=" head">
+            id
+        </th>
+        <th  class=" head">
+            image
+        </th>
+        <th class=" head">
+            title
+        </th>
+        <th class=" head">
+            category
+        </th>
+        <th class=" head">
+            price
+        </th>
+        <th class=" head">
+            rate
+        </th>
+        <th class=" head">
+
+            description
+
+        </th>
+        <th  class=" head">
+            action
+        </th>
+        <th  class=" head">
+            <button class="btn add" (click)="onClick()" >Add</button>
+        </th>
+    </thead>
+    <tbody>
+        <tr class=" border deco-pad" *ngFor="let produit of productsList ">
+            <td class="deco-pad ">
+                {{produit.id}}
+            </td>
+            <td  class="deco-pad  image">
+                <img src="{{produit.image}}" alt="" style="width: 100%;">
+            </td>
+            <td colspan="1" class="deco-pad " style="width:10%;">
+                {{produit.title}}
+            </td>
+            <td class="deco-pad ">
+                {{produit.category}}
+            </td>
+            <td class="deco-pad ">
+                {{produit.price}}
+            </td>
+            <td class="deco-pad ">
+                {{produit.rating.rate}}
+            </td>
+            <td class="deco-pad ">
+                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Description</button>
+                <p class="dropdown-menu dropdown-menu-end deco-pad " style="width: 30%;">
+                    {{produit.description}}
+                </p>
+
+            </td>
+            <td class="deco-pad  ">
+                <button (click)="openModal(produit.id)" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+            </td>
+            
+            <td class="deco-pad ">
+                <button routerLink="/updateproduct/{{produit.id}}" class="btn update">Update</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<nav aria-label="Page navigation example ">
+    <ul class="pagination justify-content-end deco-pad">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+<!-- Button trigger modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Product:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        Do you want to delete this product?
+        </div>
+        <div class="modal-footer">
+          <button type="button" #MyModalClose class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="OnDelete(iddelete)" class="btn add">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+<!-- https://getbootstrap.com/docs/5.0/forms/validation/ -->
