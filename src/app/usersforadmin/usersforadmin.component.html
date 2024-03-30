@@ -1,4 +1,4 @@
-<app-header-admin></app-header-admin>
+<app-header></app-header>
 <h1 class="container deco-pad" style="text-align: center;">ADMIN DASHBOARD FOR USERS </h1>
 <hr>
 <table class="container">
@@ -16,7 +16,13 @@
             Last name
         </th>
         <th class="head">
-            Location
+            City
+        </th>
+        <th class="head">
+            Country
+        </th>
+        <th class="head">
+            Post Code
         </th>
         <th class="head">
             Phone number
@@ -40,22 +46,28 @@
     <tbody>
         <tr class=" border deco-pad" *ngFor="let user of userlist ">
             <td class="deco-pad">
-                {{user.id}}
+                {{user.iduser}}
             </td>
             <td class="deco-pad">
                 {{user.role}}
             </td>
             <td class="deco-pad">
-                {{user.first_name}}
+                {{user.firstName}}
             </td>
             <td class="deco-pad">
-                {{user.last_name}}
+                {{user.lastName}}
             </td>
             <td class="deco-pad">
-                {{user.location}}
+                {{user.city}}
             </td>
             <td class="deco-pad">
-                {{user.phone_number}}
+                {{user.country}}
+            </td>
+            <td class="deco-pad">
+                {{user.postCode}}
+            </td>
+            <td class="deco-pad">
+                {{user.phone}}
             </td>
             <td class="deco-pad">
                 {{user.email}}
@@ -64,10 +76,10 @@
                 {{user.password}}
             </td>
             <td class="deco-pad">
-                <button (click)="openModal(user.id)" type="button" class="btn delete" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+                <button (click)="openModal(user.iduser)" type="button" class="btn delete" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
             </td>
             <td class="deco-pad">
-                <button class="btn update" routerLink="/updateusers/{{user.id}}">Update</button>
+                <button class="btn update" routerLink="/updateusers/{{user.iduser}}">Update</button>
             </td>
     
         </tr>
@@ -94,7 +106,7 @@
   </div>
 
 
-<nav aria-label="Page navigation example ">
+<!-- <nav aria-label="Page navigation example ">
     <ul class="pagination justify-content-end deco-pad">
         <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -106,4 +118,4 @@
             <a class="page-link" href="#">Next</a>
         </li>
     </ul>
-</nav>
+</nav> -->

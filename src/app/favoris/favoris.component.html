@@ -12,10 +12,10 @@
               <div class="col-lg-4 col-3 col-md-4 mb-4 mb-lg-0">
                 <!-- Image -->
                 <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                  <img src="{{product.image}}"
-                    class="w-100" alt="Blue Jeans Jacket" />
+                  <!-- <img src="{{product.image}}" class="w-100" alt="Blue Jeans Jacket" /> -->
                   <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                    <img [src]="showImage(product.imageproduct)" [alt]="product.imageproduct.titleimage" 
+                    [title]="product.imageproduct.titleimage" width="100%" />
                   </a>
                 </div>
                 <!-- Image -->
@@ -24,20 +24,20 @@
               <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                 <!-- Data -->
                 <p><strong>{{product.title}}</strong></p>
-                <p>Rate: {{product.rating.rate}}</p>
+                <!-- <p>Rate: {{product.rating}}</p> -->
                 <p>Price: {{product.price}} TND</p>
-                <button type="button" class="btn  btn-danger btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                  title="Remove item">
+                <button (click)="removeProductFromFavouriteList(product.idproduct)" type="button" class="btn  btn-danger btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                  title="Remove product">
                   <i class="fa fa-trash"></i>
                 </button>
-                <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                title="shop item">
-                <i class="fa fa-shopping-cart"></i>
-              </button>
-              <button type="button" class="btn border btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                title="shop item">
-                <i class="fa fa-eye"></i>
-              </button>
+                <button (click)="addProductToShoppingList(product.idproduct)" type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                  title="shop product">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+                <button routerLink="/singleproduct/{{product.idproduct}}" type="button"
+                  class="btn border btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="see product">
+                  <i class="fa fa-eye"></i>
+                </button>
                 <!-- Data -->
               </div>
               <hr class="my-4" />

@@ -1,11 +1,11 @@
-import { Rating } from "./rating";
+import { ImageProduct } from "./ImageProduct";
 
+// import { Rating } from "./rating";
 export class Product {
-    id!: number;
+    idproduct!: any;
     title!: string;
-    price !: number;
+    price!: number;
     description!: string;
     category!: string;
-    image!: string;
-    rating!: Rating;
+    imageproduct!: ImageProduct;
 }

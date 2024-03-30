@@ -19,20 +19,21 @@ import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "footer", component: FooterComponent },
-  { path: "home", component: HomeComponent },
+  { path: "home", component: HomeComponent},
   { path: "signin", component: SigninComponent },
   { path: "signup", component: SignupComponent },
   { path: "about", component: AboutComponent },
   { path: "favorite", component: FavorisComponent },
   { path: "shop", component: ShopComponent },
   { path: "contact", component: ContactComponent },
-  { path: "profile", component: ProfileComponent },
+  { path: "profile/:iduser", component: ProfileComponent },
   { path: "admin", component: AdminComponent },
-  { path: "products/:category", component: ProductsComponent },
+  { path: "products/:category/:syllabe", component: ProductsComponent },
   { path: "singleproduct/:id", component: SingleproductComponent },
   { path: "header-admin", component: HeaderAdminComponent },
   { path: "usersforadmin", component: UsersforadminComponent },

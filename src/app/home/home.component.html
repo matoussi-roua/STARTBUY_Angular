@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="component">
 
-  <div class="filtre ">
+  <!-- <div class="filtre ">
     <button class="boutton-filtre" id="boutton-fil">
       <i class=" fa-solid fa-bars" style="color: #000000;"></i>
     </button>
@@ -93,14 +93,50 @@
 
     </div>
 
-  </div>
+  </div> -->
 
-  <div class="pub ">
-    <img class="img-fluid" src="../assets/images/pub.png" alt="">
-  </div>
+  <section class="section-products">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="header">
+            <h3>Suggestions</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <!-- Single Product -->
+        <div *ngFor="let product of productsList" class="col-md-6 col-lg-4 col-xl-3">
+          <div id="product-2" class="single-product">
+
+            <div class="part-1 border justify-content-center deco-pad ">
+              <!-- <img src="{{product.image}}" alt="" -->
+              <img [src]="showImage(product.imageproduct)" [alt]="product.imageproduct.titleimage"
+                [title]="product.imageproduct.titleimage" width="100%" />
+
+              <span class="discount">for sell</span>
+
+              <ul>
+                <li><a (click)="addProductToShoppingList(product.idproduct)"><i class="fa fa-shopping-cart"></i></a>
+                </li>
+                <li><a (click)="addToFavouriteList(product.idproduct)"><i class="fa fa-heart"></i></a></li>
+                <li><a routerLink="/singleproduct/{{product.idproduct}}"><i class="fa fa-expand"></i></a></li>
+              </ul>
+            </div>
+            <div class="part-2 row deco-pad">
+              <div class="product-title ">{{product.title}}</div>
+              <h4 class="product-price ">PRICE : {{product.price}} TND</h4>
+              <p>Description : {{product.description}}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="divider_line"></div>
-
 
   <div class="card-group container-fluid">
     <div class="card" style="width: 20rem;">
@@ -116,7 +152,7 @@
         <li class="list-group-item">other</li>
       </ul>
       <div class="card-body">
-        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/man">
+        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/man/null">
 
       </div>
     </div>
@@ -134,7 +170,7 @@
         <li class="list-group-item">other</li>
       </ul>
       <div class="card-body">
-        <input class="btn btn-primary" type="submit" value="VIEW " routerLink="/products/women">
+        <input class="btn btn-primary" type="submit" value="VIEW " routerLink="/products/women/null">
 
       </div>
     </div>
@@ -152,7 +188,7 @@
         <li class="list-group-item">other</li>
       </ul>
       <div class="card-body">
-        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/child">
+        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/child/null">
 
       </div>
     </div>
@@ -170,7 +206,7 @@
         <li class="list-group-item">Other</li>
       </ul>
       <div class="card-body">
-        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/accessories">
+        <input class="btn btn-primary" type="submit" value="VIEW" routerLink="/products/accessories/null">
 
       </div>
     </div>

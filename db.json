@@ -51,34 +51,9 @@
       "password": "rtfygh"
     },
     {
-      "id": "jPlGqql",
-      "first_name": "",
-      "last_name": "",
-      "role": "",
-      "location": "",
-      "phone_number": "",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "MQGQlPH",
-      "first_name": "",
-      "last_name": "",
-      "role": "",
-      "location": "",
-      "phone_number": "",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "D46X86n",
-      "first_name": "",
-      "last_name": "",
-      "role": "",
-      "location": "",
-      "phone_number": "",
-      "email": "",
-      "password": ""
+      "email": "resgds@gmail.com",
+      "password": "rrr",
+      "id": "SSjwmmy"
     }
   ],
   "admin": [
@@ -89,21 +64,9 @@
   ],
   "products": [
     {
-      "id": 6,
-      "title": "Solid Gold Petite Micropave ",
-      "price": 9.9999999999999,
-      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-      "rating": {
-        "rate": 3.9,
-        "count": 70
-      }
-    },
-    {
       "id": 7,
       "title": "White Gold Plated Princess",
-      "price": 9.99,
+      "price": 9.99429,
       "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
       "category": "jewelery",
       "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
@@ -356,6 +319,136 @@
       "email": "gghjk@gmail.com",
       "password": "123456789",
       "id": 3
+    },
+    {
+      "email": "rouamatoussi@gmail.com",
+      "password": "aaaa",
+      "id": 4
+    },
+    {
+      "email": "roua@gmail.com",
+      "password": "ghj",
+      "id": 5
+    },
+    {
+      "email": "resgds@gmail.com",
+      "password": "tttt",
+      "id": 6
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "8888888",
+      "id": 7
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "med@gmail.com",
+      "id": 8
+    },
+    {
+      "email": "roua@gmail.com",
+      "password": "yyy",
+      "id": 9
+    },
+    {
+      "email": "rou@gmail.com",
+      "password": "aaaaa",
+      "id": 10
+    },
+    {
+      "email": "rou@gmail.com",
+      "password": "aaaaa",
+      "id": 11
+    },
+    {
+      "email": "rou@gmail.com",
+      "password": "aaaaa",
+      "id": 12
+    },
+    {
+      "email": "roua@gmail.com",
+      "password": "zdqsedrftgyhuji",
+      "id": 13
+    },
+    {
+      "email": "roua@gmail.com",
+      "password": "zdqsedrftgyhuji",
+      "id": 14
+    },
+    {
+      "email": "roua@gmail.com",
+      "password": "zdqsedrftgyhuji",
+      "id": 15
+    },
+    {
+      "email": "roua@gmail.com",
+      "password": "zdqsedrftgyhuji",
+      "id": 16
+    },
+    {
+      "email": "roua@gmail.com",
+      "password": "aaa",
+      "id": 17
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "med@gmail.com",
+      "id": 18
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "med@gmail.com",
+      "id": 19
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "med@gmail.com",
+      "id": 20
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "med@gmail.com",
+      "id": 21
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "8888888",
+      "id": 22
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "8888888",
+      "id": 23
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "8888888888888",
+      "id": 24
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "8888888",
+      "id": 25
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "8888888",
+      "id": 26
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "8888888",
+      "id": 27
+    },
+    {
+      "email": "med@gmail.com",
+      "password": "8888888",
+      "id": 28
+    },
+    {
+      "email": "roua@gmail.com",
+      "password": "1111",
+      "id": 29
     }
   ],
   "Client": [
@@ -379,6 +472,13 @@
       "email": "rouamatoussi@gmail.com",
       "password": "aaaaaaaa",
       "id": 3
+    },
+    {
+      "first_name": "mattoussi",
+      "last_name": "roua",
+      "email": "rouamatoussi@gmail.com",
+      "password": "gggggggggg",
+      "id": 4
     }
   ]
 }

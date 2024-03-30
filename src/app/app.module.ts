@@ -29,6 +29,7 @@ import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { ShopCardComponent } from './shop-card/shop-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { UpdateproductComponent } from './updateproduct/updateproduct.component'
     AdduserComponent,
     AddproductComponent,
     UpdateproductComponent,
+    ShopCardComponent,
   ],
   imports: [
     BrowserModule,

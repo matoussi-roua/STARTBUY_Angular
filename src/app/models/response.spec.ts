@@ -1,7 +1,7 @@
-import { Response } from './response';
+import { ResponseAuth } from './response';
 
-describe('Response', () => {
+describe('ResponseAuth', () => {
   it('should create an instance', () => {
-    expect(new Response()).toBeTruthy();
+    expect(new ResponseAuth()).toBeTruthy();
   });
 });

@@ -1,13 +1,10 @@
-<app-header-admin></app-header-admin>
+<app-header></app-header>
 <h1 class="container deco-pad" style="text-align: center;">ADMIN DASHBOARD FOR PRODUCTS </h1>
 <hr>
 <table class="container">
     <thead>
         <th class=" head">
             id
-        </th>
-        <th  class=" head">
-            image
         </th>
         <th class=" head">
             title
@@ -17,9 +14,6 @@
         </th>
         <th class=" head">
             price
-        </th>
-        <th class=" head">
-            rate
         </th>
         <th class=" head">
 
@@ -36,10 +30,7 @@
     <tbody>
         <tr class=" border deco-pad" *ngFor="let produit of productsList ">
             <td class="deco-pad ">
-                {{produit.id}}
-            </td>
-            <td  class="deco-pad  image">
-                <img src="{{produit.image}}" alt="" style="width: 100%;">
+                {{produit.idproduct}}
             </td>
             <td colspan="1" class="deco-pad " style="width:10%;">
                 {{produit.title}}
@@ -51,9 +42,6 @@
                 {{produit.price}}
             </td>
             <td class="deco-pad ">
-                {{produit.rating.rate}}
-            </td>
-            <td class="deco-pad ">
                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">Description</button>
                 <p class="dropdown-menu dropdown-menu-end deco-pad " style="width: 30%;">
@@ -62,16 +50,16 @@
 
             </td>
             <td class="deco-pad  ">
-                <button (click)="openModal(produit.id)" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+                <button (click)="openModal(produit.idproduct)" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
             </td>
             
             <td class="deco-pad ">
-                <button routerLink="/updateproduct/{{produit.id}}" class="btn update">Update</button>
+                <button routerLink="/updateproduct/{{produit.idproduct}}" class="btn update">Update</button>
             </td>
         </tr>
     </tbody>
 </table>
-<nav aria-label="Page navigation example ">
+<!-- <nav aria-label="Page navigation example ">
     <ul class="pagination justify-content-end deco-pad">
         <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -83,7 +71,7 @@
             <a class="page-link" href="#">Next</a>
         </li>
     </ul>
-</nav>
+</nav> -->
 <!-- Button trigger modal -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

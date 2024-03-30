@@ -17,11 +17,6 @@
                                 <h1 class="mb-4 mt-0">Add user</h1>
                                 <!-- First Name -->
                                 <div class="col-md-6">
-                                    <label class="form-label">Id *</label>
-                                    <input type="text" class="form-control" placeholder="" aria-label="id"
-                                         formControlName="newid">
-                                </div>
-                                <div class="col-md-6">
                                     <label class="form-label">Role *</label>
                                     <input type="text" class="form-control" placeholder="" aria-label="Phone number"
                                          formControlName="newrole">
@@ -50,9 +45,18 @@
 
                                 <!-- Skype -->
                                 <div class="col-md-6">
-                                    <label for="inputEmail4" class="form-label">Location *</label>
-                                    <input type="text" class="form-control" id="inputEmail4"
-                                         formControlName="newlocation">
+                                    <label for="city" class="form-label">City *</label>
+                                    <input type="text" class="form-control" id="city"
+                                         formControlName="newcity">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="country" class="form-label">Country *</label>
+                                    <input type="text" class="form-control" id="country"
+                                         formControlName="newcountry">
+                                </div><div class="col-md-6">
+                                    <label for="postcode" class="form-label">Post Code *</label>
+                                    <input type="text" class="form-control" id="postcode"
+                                         formControlName="newpostcode">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Email *</label>
@@ -74,7 +78,7 @@
                 <!-- button -->
                 <div class="gap-3 d-md-flex justify-content-md-end text-center">
                     <a class="btn btn-lg" style="color: #0d6efd;" href="../usersforadmin/">Cancel</a>
-                    <button type="button" (click)="OnAdd()" class="boutton btn btn-primary btn-lg" type="submit">Update profile</button>
+                    <button type="button" (click)="OnAdd()" class="boutton btn btn-primary btn-lg" type="submit">Add User</button>
                 </div>
             </form> <!-- Form END -->
         </div>

@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="../assets/images/logonoir.png" alt="image" class="img" style="width: 70%;"></a>
+    <a class="navbar-brand" href="#"><img src="../assets/images/logonoir.png" alt="image" class="img"
+        style="width: 70%;"></a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
       aria-controls="navbarTogglerDemo03 navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,22 +10,21 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search">
+        <input type="text" class="form-control" [(ngModel)]="syllabe" aria-label="Text input with dropdown button" placeholder="Search">
         <button class="categories dropdown-toggle" type="button" data-bs-toggle="dropdown"
           aria-expanded="false">{{choiceofcategorie}}</button>
         <ul class="dropdown-menu dropdown-content">
           <li><a class="dropdown-item" (click)="choosecategory('women')">Women</a></li>
-          <li><a class="dropdown-item"  (click)="choosecategory('man')">Man</a></li>
-          <li><a class="dropdown-item"  (click)="choosecategory('child')">Child</a></li>
-          <li><a class="dropdown-item"  (click)="choosecategory('accessories')">Accessories</a></li>
+          <li><a class="dropdown-item" (click)="choosecategory('man')">Man</a></li>
+          <li><a class="dropdown-item" (click)="choosecategory('child')">Child</a></li>
+          <li><a class="dropdown-item" (click)="choosecategory('accessories')">Accessories</a></li>
 
           <li>
             <hr class="dropdown-divider">
           </li>
           <li><a class="dropdown-item" (click)="choosecategory('Categories')">Default</a></li>
         </ul>
-        <button class=" btn submit" type="button" 
-          aria-expanded="false">Submit</button>
+        <button class=" btn submit" type="button" aria-expanded="false" (click)="onSubmit()">Submit</button>
       </div>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -33,39 +33,38 @@
             Home
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"*ngIf="client && !admin">
           <a class="nav-link cursor" (click)="onFavoriteClick()" style="cursor: pointer;">
             <i class="fa fa-heart"></i>
             <!-- <div style="color: red;"><fa-icon [icon]="faHeart"></fa-icon></div> -->
             Favorite
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"*ngIf="client&& !admin">
           <a class="nav-link cursor" routerLink="/shop">
             <fa-icon [icon]="faShopping"></fa-icon>
             Shop
           </a>
         </li>
-        <li *ngIf="!isLoggedIn" class="border nav-item sign">
-          <a class="nav-link sign " routerLink="/signin">
-            Sign In
+        <li class="nav-item" *ngIf="!client && admin">
+          <a class="nav-link active" routerLink="/admin">
+            <i class="fa fa-shopping-bag fa-lg"></i>
+            Products
           </a>
         </li>
-        <li *ngIf="!isLoggedIn" class="nav-item border sign">
-          <a class="nav-link sign " routerLink="/signup">
-            Sign Up
+        <li class="nav-item"*ngIf="!client &&  admin">
+          <a class="nav-link active" routerLink="/usersforadmin">
+            <i class="fa fa-user fa-lg"></i>
+            Users
           </a>
         </li>
-        <li *ngIf="!isLoggedIn" class="nav-item dropdown">
+        <li  class="nav-item dropdown" *ngIf="!client && admin">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class=" fa fa-circle " style="color: #01b701;"></i>
             Account
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/profile">
-              <i class=" fa fa-user fa-sm" style="color: #000000;"></i>
-              Profile</a></li>
-            <li>
+            <li (click)="loggingout()">
               <a class="dropdown-item" routerLink="/home">
                 <i class="fa fa-arrow-circle-right" style="color: #000000;"></i>
                 Log Out</a></li>
@@ -74,6 +73,37 @@
             </li>
             <li><a class="dropdown-item" href="#">
               <i class="fa fa-question border"></i>              Help</a></li>
+          </ul>
+        </li>
+        <li *ngIf="visitor" class="border nav-item sign">
+          <a class="nav-link sign " routerLink="/signin">
+            Sign In
+          </a>
+        </li>
+        <li *ngIf="visitor" class="nav-item border sign">
+          <a class="nav-link sign " routerLink="/signup">
+            Sign Up
+          </a>
+        </li>
+        <li *ngIf="client" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class=" fa fa-circle " style="color: #01b701;"></i>
+            Account
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/profile">
+                <i class=" fa fa-user fa-sm" style="color: #000000;"></i>
+                Profile</a></li>
+            <li (click)="loggingout()">
+              <a class="dropdown-item" routerLink="/home">
+                <i class="fa fa-arrow-circle-right" style="color: #000000;"></i>
+                Log Out</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" *ngIf="false">
+                <i class="fa fa-question border"></i> Help</a></li>
           </ul>
         </li>
       </ul>

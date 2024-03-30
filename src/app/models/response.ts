@@ -1,7 +1,6 @@
-import { Client } from "./client";
 import { Users } from "./users";
 
-export class Response {
+export class ResponseAuth {
     accessToken!:string;
-    clt!:Client;
+    user!:Users;
 }

@@ -1,8 +1,9 @@
 <app-header></app-header>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+	integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 
 <div class="container">
-<div class="row">
+	<div class="row">
 		<div class="col-12">
 			<!-- Page title -->
 			<div class="my-5">
@@ -10,83 +11,95 @@
 				<hr>
 			</div>
 			<!-- Form START -->
-			<form class="file-upload">
+			<form class="file-upload" [formGroup]="updateuser">
 				<div class="row mb-5 gx-5">
 					<!-- Contact detail -->
 					<div class="col-xxl-8 mb-5 mb-xxl-0">
 						<div class="bg-secondary-soft px-4 py-5 rounded">
 							<div class="row g-3">
 								<h4 class="mb-4 mt-0">Contact detail</h4>
-								<!-- First Name -->
 								<div class="col-md-6">
 									<label class="form-label">First Name *</label>
-									<input type="text" class="form-control" placeholder="" aria-label="First name" value="Scaralet">
+									<input type="text" class="form-control" placeholder="" aria-label="First name"
+										formControlName="newfname">
 								</div>
 								<!-- Last name -->
 								<div class="col-md-6">
 									<label class="form-label">Last Name *</label>
-									<input type="text" class="form-control" placeholder="" aria-label="Last name" value="Doe">
+									<input type="text" class="form-control" placeholder="" aria-label="Last name"
+										formControlName="newlname">
 								</div>
 								<!-- Phone number -->
+
 								<div class="col-md-6">
 									<label class="form-label">Phone number *</label>
-									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="(333) 000 555">
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number"
+										formControlName="newphone">
 								</div>
 								<!-- Mobile number -->
-								<div class="col-md-6">
-									<label class="form-label">Phone number *</label>
-									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="+91 9852 8855 252">
-								</div>
+
 								<!-- Email -->
-                                <div class="col-md-6">
-									<label for="inputEmail4" class="form-label">Email *</label>
-									<input type="email" class="form-control" id="inputEmail4" value="example@homerealty.com">
-								</div>
-								<div class="col-md-6">
-									<label for="inputEmail4" class="form-label">City *</label>
-									<input type="email" class="form-control" id="inputEmail4" value="example@homerealty.com">
-								</div>
+
 								<!-- Skype -->
 								<div class="col-md-6">
-									<label class="form-label">Country *</label>
-									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="Scaralet D">
+									<label for="inputEmail4" class="form-label">City *</label>
+									<input type="text" class="form-control" id="inputEmail4" formControlName="newcity">
 								</div>
-                                <div class="col-md-6">
-									<label class="form-label">PostCode *</label>
-									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="Scaralet D">
+								<div class="col-md-6">
+									<label for="inputEmail4" class="form-label">Country *</label>
+									<input type="text" class="form-control" id="inputEmail4"
+										formControlName="newcountry">
 								</div>
+								<div class="col-md-6">
+									<label for="inputEmail4" class="form-label">PostCode *</label>
+									<input type="text" class="form-control" id="inputEmail4"
+										formControlName="newpostcode">
+								</div>
+								<div class="col-md-6">
+									<label for="inputEmail4" class="form-label">Email *</label>
+									<input type="email" class="form-control" id="inputEmail4"
+										formControlName="newemail">
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Password *</label>
+									<input type="password" class="form-control" placeholder="" aria-label="Phone number"
+										formControlName="newpassword">
+								</div>
+								<!-- First Name -->
 							</div> <!-- Row END -->
 						</div>
 					</div>
 					<!-- Upload profile -->
-					<div class="col-xxl-4">
+					<!-- <div class="col-xxl-4">
 						<div class="bg-secondary-soft px-4 py-5 rounded">
 							<div class="row g-3">
 								<h4 class="mb-4 mt-0">Upload your profile photo</h4>
 								<div class="text-center">
-									<!-- Image upload -->
 									<div class="square position-relative display-2 mb-3">
-										<i class="fas fa-fw fa-user position-absolute top-50 start-50 translate-middle text-secondary"></i>
+										
+										<div class="col-md-12">
+											<div *ngIf=retrievedImage>
+												<img [src]="retrievedImage">
+											</div>
+										</div>
 									</div>
-									<!-- Button -->
-									<input type="file" id="customFile" name="file" hidden="">
+									<input (change)=getFile($event) type="file" id="customFile" name="file" >
 									<label class="btn btn-success-soft btn-block" for="customFile">Upload</label>
 									<button type="button" class="btn btn-danger-soft">Remove</button>
-									<!-- Content -->
-									<p class="text-muted mt-3 mb-0"><span class="me-1">Note:</span>Minimum size 300px x 300px</p>
+									<p class="text-muted mt-3 mb-0"><span class="me-1">Note:</span>Minimum size 300px x
+										300px</p>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div> <!-- Row END -->
-
-			
-				<!-- button -->
-				<div class="gap-3 d-md-flex justify-content-md-end text-center">
-					<button type="button" class="btn btn-danger btn-lg">Delete profile</button>
-					<button type="button" class="boutton btn btn-primary btn-lg">Update profile</button>
+					</div> -->
+					
 				</div>
-			</form> <!-- Form END -->
+			</form> 
+			<!-- Form END -->
 		</div>
 	</div>
+	<div class="gap-3 d-md-flex justify-content-md-end text-center">
+		<a class="btn btn-lg" style="color: #0d6efd;" href="../home/">Cancel</a>
+		<button type="button" (click)="onUpdate()" class="boutton btn btn-primary btn-lg" type="submit">Update profile</button>
 	</div>
+</div>

@@ -1,39 +1,42 @@
 <app-header></app-header>
 <section class="section-products">
-    <div class="container">
-            <div class="row justify-content-center text-center">
-                    <div class="col-md-8 col-lg-6">
-                            <div class="header">
-                                    <h3>Featured Product</h3>
-                                    <h2>{{currentCategory}}</h2>
-                            </div>
-                    </div>
-            </div>
-            <div class="row">
-                    
-                    <!-- Single Product -->
-                    <div  *ngFor="let product of filteredProducts" class="col-md-6 col-lg-4 col-xl-3">
-                            <div id="product-2" class="single-product">
-                                
-                                    <div class="part-1 border justify-content-center deco-pad ">
-                                        <img src="{{product.image}}" alt="" style="margin: auto; display: block;" width="50%" >
-                                            <span class="discount">for sell</span>
-                                            
-                                            <ul>
-                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-plus"></i></a></li>
-                                                    <li><a routerLink="/singleproduct/{{product.id}}"><i class="fa fa-expand"></i></a></li>
-                                            </ul>
-                                    </div>
-                                    <div class="part-2 row deco-pad">
-                                            <div class="product-title ">{{product.title}}</div>
-                                            <h4 class="product-price ">PRICE : {{product.price}} TND</h4>
-                                            <p>RATING : {{product.rating.rate}}</p>
-                                            
-                                    </div>
-                            </div>
-                    </div>
-            </div>
-    </div>
+        <div class="container">
+                <div class="row justify-content-center text-center">
+                        <div class="col-md-8 col-lg-6">
+                                <div class="header">
+                                        <h3>{{currentCategory}}</h3>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+
+                        <!-- Single Product -->
+                        <div *ngFor="let product of filteredProducts" class="col-md-6 col-lg-4 col-xl-3">
+                                <div id="product-2" class="single-product">
+
+                                        <div class="part-1 border justify-content-center deco-pad ">
+                                                <!-- <img src="{{product.image}}" alt="" -->
+                                                <img [src]="showImage(product.imageproduct)" [alt]="title" [title]="title" width="100%" />
+
+                                                        
+                                                <span class="discount">for sell</span>
+
+                                                <ul>
+                                                        <li><a (click)="addProductToShoppingList(product.idproduct)"><i class="fa fa-shopping-cart"></i></a></li>
+                                                        <li><a (click)="addToFavouriteList(product.idproduct)"><i
+                                                                                class="fa fa-heart"></i></a></li>
+                                                        <li><a routerLink="/singleproduct/{{product.idproduct}}"><i
+                                                                                class="fa fa-expand"></i></a></li>
+                                                </ul>
+                                        </div>
+                                        <div class="part-2 row deco-pad">
+                                                <div class="product-title ">{{product.title}}</div>
+                                                <h4 class="product-price ">PRICE : {{product.price}} TND</h4>
+                                                <p>Description : {{product.description}}</p>
+
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
 </section>

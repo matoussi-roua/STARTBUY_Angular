@@ -30,7 +30,9 @@ export class UpdateuserComponent implements OnInit {
       newpassword: ['', Validators.required],
       newfname: ['', Validators.required],
       newrole: ['', Validators.required],
-      newlocation: ['', Validators.required],
+      newcity: ['', Validators.required],
+      newcountry: ['', Validators.required],
+      newpostcode: ['', Validators.required],
       newphone: ['', Validators.required]
     });
 
@@ -44,11 +46,13 @@ export class UpdateuserComponent implements OnInit {
 
   updateForm() {
     this.updateuser.patchValue({
-      newfname: this.userselected.first_name,
-      newlname: this.userselected.last_name,
+      newfname: this.userselected.firstName,
+      newlname: this.userselected.lastName,
       newrole: this.userselected.role,
-      newlocation: this.userselected.location,
-      newphone: this.userselected.phone_number,
+      newcity: this.userselected.city,
+      newcountry: this.userselected.country,
+      newpostcode: this.userselected.postCode,
+      newphone: this.userselected.phone,
       newemail: this.userselected.email,
       newpassword: this.userselected.password
     });
@@ -56,11 +60,13 @@ export class UpdateuserComponent implements OnInit {
 
   OnUpdate() {
     console.log('hey');
-    this.userselected.first_name = this.updateuser.get('newfname')?.value;
-    this.userselected.last_name = this.updateuser.get('newlname')?.value;
+    this.userselected.firstName = this.updateuser.get('newfname')?.value;
+    this.userselected.lastName = this.updateuser.get('newlname')?.value;
     this.userselected.role = this.updateuser.get('newrole')?.value;
-    this.userselected.location = this.updateuser.get('newlocation')?.value;
-    this.userselected.phone_number = this.updateuser.get('newphone')?.value;
+    this.userselected.city = this.updateuser.get('newcity')?.value;
+    this.userselected.country = this.updateuser.get('newcountry')?.value;
+    this.userselected.postCode = this.updateuser.get('newpostcode')?.value;
+    this.userselected.phone = this.updateuser.get('newphone')?.value;
     this.userselected.email = this.updateuser.get('newemail')?.value;
     this.userselected.password = this.updateuser.get('newpassword')?.value;
 

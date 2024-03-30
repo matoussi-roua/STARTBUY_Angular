@@ -43,9 +43,19 @@
 
                                 <!-- Skype -->
                                 <div class="col-md-12">
-                                    <label for="inputEmail4" class="form-label">Location *</label>
+                                    <label for="inputEmail4" class="form-label">City *</label>
                                     <input type="text" class="form-control" id="inputEmail4"
-                                         formControlName="newlocation">
+                                         formControlName="newcity">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputEmail4" class="form-label">Country *</label>
+                                    <input type="text" class="form-control" id="inputEmail4"
+                                         formControlName="newcountry">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputEmail4" class="form-label">PostCode *</label>
+                                    <input type="text" class="form-control" id="inputEmail4"
+                                         formControlName="newpostcode">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Email *</label>
@@ -67,7 +77,7 @@
                 <!-- button -->
                 <div class="gap-3 d-md-flex justify-content-md-end text-center">
                     <a class="btn btn-lg" style="color: #0d6efd;" href="../usersforadmin/">Cancel</a>
-                    <button type="button" (click)="OnUpdate()" class="boutton btn btn-primary btn-lg" type="submit">Update profile</button>
+                    <button type="button" (click)="OnUpdate()" class="boutton btn btn-primary btn-lg" type="submit">Update User</button>
                 </div>
             </form> <!-- Form END -->
         </div>

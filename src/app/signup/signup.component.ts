@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Client } from '../models/client';
 import { UsersService } from '../service/users.service';
+import { Users } from '../models/users';
 
 @Component({
   selector: 'app-signup',
@@ -11,39 +12,44 @@ import { UsersService } from '../service/users.service';
 })
 
 export class SignupComponent implements OnInit {
-  signup!:FormGroup;
-  Validation=false;
-      constructor(private fb :FormBuilder,private route  :Router,private userservice : UsersService){
+  signupform!: FormGroup;
+  Validation = false;
 
+  constructor(private fb: FormBuilder, private usersrv: UsersService, private route: Router) {
   }
-
-
-  ngOnInit() {
-    this.signup = this.fb.group({
-      "fname":["",Validators.required],
-      "lname":["",Validators.required],
-      "email":["",[Validators.required, Validators.email]],
-      "password":["",Validators.required],
-      "repeatpassword":["",Validators.required],
-      "agree":[false, Validators.requiredTrue]
-    })
-      
+  ngOnInit(): void {
+    this.signupform = this.fb.group({
+      lname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      fname: ['', Validators.required],
+      repeatpassword:["",Validators.required],
+      agree:[false, Validators.requiredTrue]
+    });
   }
-  OnSubmit(){
-    this.Validation=true;
-    if (this.signup.valid) {
-      let newclient:Client =new Client();
-      newclient.id = this.signup.get("newid")?.value;
-      newclient.first_name = this.signup.get("fname")?.value;
-      newclient.last_name = this.signup.get("lname")?.value;
-      newclient.email = this.signup.get("email")?.value;
-      newclient.password = this.signup.get("password")?.value;
-      this.userservice.addClient(newclient).subscribe(
-        ()=>{
-          console.log(newclient);
+  OnSubmit() {
+    this.Validation = true;
+    if (this.signupform.valid) {
+      let useradded: Users = new Users();
+      useradded.firstName = this.signupform.get("fname")?.value;
+      useradded.lastName = this.signupform.get("lname")?.value;
+      useradded.role = "CLIENT";
+      useradded.city = "";
+      useradded.country = "";
+      useradded.postCode = 0;
+      useradded.phone = 0;
+      useradded.email = this.signupform.get("email")?.value;
+      useradded.password = this.signupform.get("password")?.value;
+
+      this.usersrv.addUser(useradded).subscribe(
+        (response) => {
+          console.log('User added successfully');
+          useradded.iduser = response.iduser; // Assuming the server returns the ID in the response
+          this.route.navigate(['/profile/', useradded.iduser]);
         }
       );
-      this.route.navigate([""])
+      this.route.navigate(['/profile/',useradded.iduser]);
     }
-      };
+  }
+
 }

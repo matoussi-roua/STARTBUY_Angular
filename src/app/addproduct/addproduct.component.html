@@ -14,16 +14,6 @@
                         <div class="bg-secondary-soft px-4 py-5 rounded">
                             <div class="row g-3">
                                 <h1 class="mb-4 mt-0">Add Product:</h1>
-                                <!-- First Name -->
-                                <div class="col-md-6">
-                                    <label class="form-label">Id *</label>
-                                    <input type="number" class="form-control " placeholder="" aria-label="Id"
-                                        formControlName="newid">
-                                    <div *ngIf="addproductform.controls['newid'].errors?.['required'] && (!addproductform.controls['newid'].pristine ||validation)"
-                                        class="alert" style="color: red;" role="alert">
-                                        *Id is required
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <label class="form-label">category *</label>
                                     <input type="text" class="form-control " placeholder="" aria-label="Category"
@@ -65,8 +55,12 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Image *</label>
-                                    <input type="text" class="form-control" placeholder="place your image"
-                                        aria-label="Image" formControlName="newimage">
+                                        <img [src]="url"  width="100%"/>
+                                        <!-- <img [src]="viewedImage"> -->
+                                    
+                                    <input type="file" accept="image/*" class="file-upload" 
+                                    (change)="onFileChanged($event)"
+                                    aria-label="Image" formControlName="newimage" >
                                     <div *ngIf="(!addproductform.controls['newimage'].pristine || validation ) && addproductform.controls['newimage'].errors?.['required']"
                                         class="alert" style="color: red;" role="alert">
                                         *Image is required
